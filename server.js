@@ -47,6 +47,8 @@ app.post('/api/register', async (req, res) => {
   });
 
 app.get("/api/m/:movie_name",async (req,res)=>{
+    try{
+
     const movie_name = req.params.movie_name;
     console.log(movie_name);
     let resp = await db.query(`select * from movie where m_id='${movie_name}'`);
@@ -75,6 +77,10 @@ app.get("/api/m/:movie_name",async (req,res)=>{
         console.log(resp.rowCount);
         res.json(resp.rows[0]);
     }
+}
+catch(error){
+    res.json(error)
+}
 })
 
 app.get("/api/search/:search_key", async (req,res) =>{

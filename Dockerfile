@@ -2,7 +2,7 @@
 FROM node
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and install dependencies
 COPY package*.json ./
