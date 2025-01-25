@@ -24,7 +24,7 @@ services:
       - PORT=8000
       - jwtSecret=ebube2003 
     ports:
-      - "8000:8000"
+      - "8122:8000"
     depends_on:
       - db
     # volumes:
