@@ -27,11 +27,14 @@ require("dotenv").config()
 app.use(express.json()) //  Gets the value from the req.body
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 8000
 
 //Middleware
 app.use(cors()) //Allows for multiple access from different sites
-
+app.get('/',(req,res)=>{
+    console.log("Working")
+    res.jsonp("Working fine")
+})
 //Routes
 app.post('/api/register', async (req, res) => {
     const { name, email, password } = req.body;
