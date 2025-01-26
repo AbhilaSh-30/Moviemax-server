@@ -5,6 +5,7 @@ const jwtGenerator = require("../utils/jwtGenerator")
 const registerUser = async (req, res) => {
     try {
         const { name, email, password} = req.body
+        console.log(name,email,password);
         const isExist = await pool.query("SELECT * FROM users WHERE user_email = ($1)", [email])
         if(isExist.rows.length > 0){
            return res.status(401).json("Email Address already exists")
