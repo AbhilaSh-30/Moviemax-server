@@ -27,8 +27,8 @@ require("dotenv").config()
 app.use(express.json()) //  Gets the value from the req.body
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ['http://localhost:5174'], // Allow requests from React client
-    credentials: true,
+    origin: "*", // Allow requests from React client
+    credentials:true,
 }));
 
 const PORT = process.env.PORT || 8000
