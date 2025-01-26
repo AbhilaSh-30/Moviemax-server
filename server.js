@@ -27,7 +27,7 @@ require("dotenv").config()
 app.use(express.json()) //  Gets the value from the req.body
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ['http://localhost:5173'], // Allow requests from React client
+    origin: ['http://localhost:5174'], // Allow requests from React client
     credentials: true,
 }));
 
