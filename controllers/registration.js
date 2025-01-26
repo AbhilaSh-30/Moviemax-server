@@ -20,7 +20,7 @@ const registerUser = async (req, res) => {
         res.status(200).json({token})
         
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
