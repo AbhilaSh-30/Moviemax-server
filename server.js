@@ -4,8 +4,6 @@ const cors = require("cors")
 
 require("dotenv").config()
 
-app.use(cors({ origin: "*" }));
-
 const registerRoutes = require("./routes/registeration")
 
 const app = express()
@@ -28,6 +26,7 @@ const { authorizeUser } = require("./middleware/authorize")
 require("dotenv").config()
 app.use(express.json()) //  Gets the value from the req.body
 app.use(bodyParser.json());
+app.use(cors({ origin: "*" }));
 
 const PORT = process.env.PORT || 8000
 
